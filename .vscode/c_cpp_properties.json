@@ -1,17 +1,15 @@
 {
-    "env": {
-        "userPath": "%USERPROFILE%"
-    },
     "configurations": [
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
-                "${userPath}/Documents/Arduino/libraries/**",
-                "${userPath}/AppData/Local/Arduino15/packages/arduino/hardware/avr/**",
-                "${userPath}/AppData/Local/Arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7/avr/include/**",
-                "${userPath}/AppData/Local/Arduino15/packages/arduino/hardware/avr/1.8.6/cores/**",
-                "${userPath}/AppData/Local/Arduino15/packages/arduino/hardware/avr/1.8.6/variants/**"
+                "${workspaceFolder}\\**",
+                "${workspaceFolder}\\arduino_addons\\**",
+                "~\\Documents\\Arduino\\libraries\\**",
+                "~\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\**",
+                "~\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\avr\\include\\**",
+                "~\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\**",
+                "~\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\**"
             ],
             "defines": [
                 "_DEBUG",
