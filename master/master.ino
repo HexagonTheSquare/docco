@@ -8,10 +8,16 @@ SERIAL PORT: COM?
 
 */
 
+// includes
 #include<Servo.h>
 #include<Wire.h>
 
-//Constant variables init
+// defines
+#define INPUT_SIZE 30
+#define DEFAULT_BAUD 9600
+#define SLAVE_ADRESS 9
+
+// constants
 const String fingers[5] = {
   "thumb",
   "index",
@@ -19,16 +25,12 @@ const String fingers[5] = {
   "ring",
   "pinky"      
 };
-const int slaveAdress = 9;
-const int guiBaud = 9600;
 
-//Variable init
-
-//Struct init
+// structs
 struct FingerServo {
   int potpin;
   int pos;
-
+  Servo servo;
 };
 
 struct SlaveCommand {
@@ -39,15 +41,38 @@ struct SlaveCommand {
 
 
 void setup() {
-  
-  Serial.begin(guiBaud);
-
-  
-
-  
+  Serial.begin(DEFAULT_BAUD);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  if(Serial.available()) {
+    String strData = Serial.readString();
+    char dataType = strData.charAt(0);
+    char data[strData.length()+1];
+    strcpy(data, strData.c_str());
+    int values[strData.length()-1];
+
+    int lastIndex = 2;
+    for(int x = 2; x < strData.length()-2; x++) {
+      if (data[x] == " ") {
+        char currentVal[x - lastIndex];
+        for(int y = lastIndex; y < x; y++) {
+          currentVal[y - lastIndex] = data[y];
+        }
+        values[x-2] = atoi(currentVal);
+        lastIndex = x+1;
+      }
+    }
+
+        
+    switch(dataType) {
+      case 'P':
+      // SET FINGER POSITION
+      break;
+      case 'S':
+      // SET SERVO PINS
+      break;
+    }    
+  }
 
 }
