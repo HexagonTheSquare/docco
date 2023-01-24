@@ -1,17 +1,26 @@
 // Master board, handles input and output, delegates control of overflow fingers to slave board.
 
+/*
+
+BOARD INFO || INTERFACE INFORMATION
+
+SERIAL PORT: COM?
+
+*/
+
 #include<Servo.h>
 #include<Wire.h>
 
 //Constant variables init
-const std::string fingers[5] = {
+const String fingers[5] = {
   "thumb",
   "index",
   "middle",
   "ring",
   "pinky"      
-}
+};
 const int slaveAdress = 9;
+const int guiBaud = 9600;
 
 //Variable init
 
@@ -31,29 +40,9 @@ struct SlaveCommand {
 
 void setup() {
   
-  Serial.begin(9600);
+  Serial.begin(guiBaud);
 
-  for(int x = 0; x < sizeof(fingers)-1); x++)
-  {
-    Serial.println("What is the pin number for {0}?", fingers[x])
-    int answer = Serial.read();
-
-    FingerServo finger = {
-      answer,
-      0
-    };
-    
-  }
-
-  /*SlaveCommand command = {
-    "spapa",
-    9
-  };
-  Serial.begin(9600);
-  Serial.println(command.address);
-  Wire.beginTransmission(command.address);
-  Wire.write(command.address);
-  Wire.endTransmission();*/
+  
 
   
 }
