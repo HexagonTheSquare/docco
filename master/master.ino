@@ -33,6 +33,13 @@ struct SlaveCommand {
 
 };
 
+void updateServos() {
+  thumb1.servo.write(thumb1.pos); thumb2.servo.write(thumb2.pos); thumb3.servo.write(thumb3.pos);
+  index1.servo.write(index1.pos); index2.servo.write(index2.pos); index3.servo.write(index3.pos);
+  middle1.servo.write(middle1.pos); middle2.servo.write(middle2.pos); middle3.servo.write(middle3.pos);
+  ring1.servo.write(ring1.pos); ring2.servo.write(ring2.pos); ring3.servo.write(ring3.pos);
+  pinky1.servo.write(pinky1.pos); pinky2.servo.write(pinky2.pos); pinky3.servo.write(pinky3.pos);
+}
 
 void setup() {
   Serial.begin(DEFAULT_BAUD);
@@ -67,6 +74,8 @@ void loop() {
       middle1.pos = values[2]; middle2.pos = values[2]; middle3.pos = values[2];
       ring1.pos = values[3]; ring2.pos = values[3]; ring3.pos = values[3];
       pinky1.pos = values[4]; pinky2.pos = values[4]; pinky3.pos = values[4];
+
+      updateServos();      
       break;
       case 'S':
       // SET SERVO PINS
@@ -85,5 +94,4 @@ void loop() {
   Serial.print(middle1.pos); Serial.print(":"); Serial.print(middle2.pos); Serial.print(":"); Serial.print(middle3.pos); Serial.print(" ");
   Serial.print(ring1.pos); Serial.print(":"); Serial.print(ring2.pos); Serial.print(":"); Serial.print(ring3.pos); Serial.print(" ");
   Serial.print(pinky1.pos); Serial.print(":"); Serial.print(pinky2.pos); Serial.print(":"); Serial.print(pinky3.pos); Serial.print(" ");
-    
 }
