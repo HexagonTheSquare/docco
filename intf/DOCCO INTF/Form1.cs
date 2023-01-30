@@ -18,6 +18,7 @@ namespace DOCCO_INTF
         {
             InitializeComponent();
             serialPort1.Open();
+            serialPort1.WriteTimeout = 10000;
 
             panelList.Add(panel1);
             panelList.Add(panel2);
@@ -51,56 +52,56 @@ namespace DOCCO_INTF
 
         private void middleButton_Click_1(object sender, EventArgs e)
         {
-            thumbTrack.Value = 90;
-            indexTrack.Value = 90;
-            middleTrack.Value = 0;
-            ringTrack.Value = 90;
-            pinkyTrack.Value = 90;
+            thumbTrack.Value = 0;
+            indexTrack.Value = 0;
+            middleTrack.Value = 90;
+            ringTrack.Value = 0;
+            pinkyTrack.Value = 0;
         }
 
         private void peaceButton_Click_1(object sender, EventArgs e)
         {
-            thumbTrack.Value = 90;
-            indexTrack.Value = 0;
-            middleTrack.Value = 0;
-            ringTrack.Value = 90;
-            pinkyTrack.Value = 90;
+            thumbTrack.Value = 0;
+            indexTrack.Value = 90;
+            middleTrack.Value = 90;
+            ringTrack.Value = 0;
+            pinkyTrack.Value = 0;
         }
 
         private void broButton_Click_1(object sender, EventArgs e)
         {
-            thumbTrack.Value = 0;
-            indexTrack.Value = 90;
-            middleTrack.Value = 90;
-            ringTrack.Value = 90;
-            pinkyTrack.Value = 0;
+            thumbTrack.Value = 90;
+            indexTrack.Value = 0;
+            middleTrack.Value = 0;
+            ringTrack.Value = 0;
+            pinkyTrack.Value = 90;
         }
 
         private void rockButton_Click_1(object sender, EventArgs e)
         {
-            thumbTrack.Value = 90;
-            indexTrack.Value = 0;
-            middleTrack.Value = 90;
-            ringTrack.Value = 90;
-            pinkyTrack.Value = 0;
+            thumbTrack.Value = 0;
+            indexTrack.Value = 90;
+            middleTrack.Value = 0;
+            ringTrack.Value = 0;
+            pinkyTrack.Value = 90;
         }
 
         private void spiderButton_Click_1(object sender, EventArgs e)
         {
-            thumbTrack.Value = 0;
-            indexTrack.Value = 0;
-            middleTrack.Value = 90;
-            ringTrack.Value = 90;
-            pinkyTrack.Value = 0;
+            thumbTrack.Value = 90;
+            indexTrack.Value = 90;
+            middleTrack.Value = 0;
+            ringTrack.Value = 0;
+            pinkyTrack.Value = 90;
         }
 
         private void thumbButton_Click_1(object sender, EventArgs e)
         {
-            thumbTrack.Value = 0;
-            indexTrack.Value = 90;
-            middleTrack.Value = 90;
-            ringTrack.Value = 90;
-            pinkyTrack.Value = 90;
+            thumbTrack.Value = 90;
+            indexTrack.Value = 0;
+            middleTrack.Value = 0;
+            ringTrack.Value = 0;
+            pinkyTrack.Value = 0;
         }
     }
 }
